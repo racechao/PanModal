@@ -44,6 +44,8 @@ extension UIViewController: PanModalPresenter {
                                 sourceRect: CGRect = .zero,
                                 completion: (() -> Void)? = nil) {
 
+        guard UIApplication.shared.applicationState != .background else { return }
+        
         /**
          Here, we deliberately do not check for size classes. More info in `PanModalPresentationDelegate`
          */
